@@ -79,5 +79,9 @@ function checkIfDead() {
   }
 
   //Check if player's health points is equal to or below 0. If so, alert loss and restart game
+  else if (playerHealth <=0 ){
+    alert("You have lost! The page will reset and you may try again.");
+    location.reload();
+  }
 
 }
