@@ -3,9 +3,10 @@ var defenderSelected = false;
 var attackButtonCreated = false;
 var playerBaseAttack;
 
+var enemiesLeft = 3;
+
 //Add click handler to the character cards
 $(".character").on("click", setupGame);
-
 
 function setupGame() {
   //Check if the player has selected a character yet
@@ -13,7 +14,7 @@ function setupGame() {
   if (!characterSelected) {
     $(this).appendTo("#playerRow");
 
-    playerBaseAttack = $(this).attr('attack') * 1;
+    playerBaseAttack = $(this).attr("attack") * 1;
     console.log("baseAttack: " + playerBaseAttack);
 
     characterSelected = true;
@@ -70,18 +71,27 @@ function attack() {
 function checkIfDead() {
   //Check if the defenders health points is equal to or below 0
   if (defenderHealth <= 0) {
+      enemiesLeft--;
     $("#defenderRow .character").remove();
-    //Allow the player to select a new defender
-    alert(
-      "You killed the defender! Choose a new enemy to fight by clicking on them."
-    );
-    defenderSelected = false;
+    //Check if the game is over
+    if(enemiesLeft === 0){
+        alert(
+            "You won the game! Congratulations. Play again with a new character."
+        );
+        location.reload();    
+    }
+    else{
+        //Allow the player to select a new defender
+        alert(
+        "You killed the defender! Choose a new enemy to fight by clicking on them."
+        );
+        defenderSelected = false;
+    }
   }
 
   //Check if player's health points is equal to or below 0. If so, alert loss and restart game
-  else if (playerHealth <=0 ){
+  if (playerHealth <= 0) {
     alert("You have lost! The page will reset and you may try again.");
     location.reload();
   }
-
 }
