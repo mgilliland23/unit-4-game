@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Star Wars Game</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg">
+    <!-- Start with a page with below layout and character cards
+    all in one line. Listen to click event on a character card
+    and then start the game. Move slelected character to the players row
+    and prompt to pick an enemy.  Move clicked enemy to defender section-->
+    <div class="container">
+      <div class="row" id="startingRow">
+        <div class="card text-center character col-sm-3" id="yoda" attack=5 counter-attack=40>
+          <div class="card-header">
+            Yoda
+          </div>
+          <div class="card-body">
+            <img class="img-fluid" src="assets/images/yoda.jpg" />
+          </div>
+          <div class="card-footer" id="hp">
+            400
+          </div>
+        </div>
+
+        <div class="card text-center character col-sm-3" id="darth-vader" attack=10 counter-attack=35>
+          <div class="card-header">
+            Darth Vader
+          </div>
+          <div class="card-body">
+            <img class="img-fluid" src="assets/images/darth-vader.jpg" />
+          </div>
+          <div class="card-footer" id="hp">
+            300
+          </div>
+        </div>
+
+        <div class="card text-center character col-sm-3" id="han-solo" attack=15 counter-attack=30>
+          <div class="card-header">
+            Han Solo
+          </div>
+          <div class="card-body">
+            <img class="img-fluid" src="assets/images/han-solo.jpg" />
+          </div>
+          <div class="card-footer" id="hp">
+            280
+          </div>
+        </div>
+
+        <div class="card text-center character col-sm-3" id="luke-skywalker" attack=10 counter-attack=25>
+          <div class="card-header">
+            Luke Skywalker
+          </div>
+          <div class="card-body">
+            <img class="img-fluid" src="assets/images/luke-skywalker.jpg" />
+          </div>
+          <div class="card-footer" id="hp">
+            325
+          </div>
+        </div>
+      </div>
+
+      <h3 id="playerHeader">Your Character: </h3>
+      <div class="row" id="playerRow">
+      </div>
+
+      <h3>Characters available to fight:</h3>
+
+      <div class="row" id="enemyRow">
+      </div>
+
+      
+
+      <h3>Defender:</h3>
+
+      <div class="row" id="defenderRow">
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="assets/javascript/game.js"></script>

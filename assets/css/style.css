@@ -1,0 +1,51 @@
+body,
+html {
+  height: 100%;
+  background-color: black;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../images/background.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  background-color: transparent;
+  color: white;
+}
+
+.card-footer{
+  padding: 0;
+}
+
+.card-header{
+  padding: 0;
+}
+
+.character {
+  border: solid green 2px;
+  height: 200px;
+}
+
+.character img{
+  width: 175px;
+  height: 100px;
+}
+
+h3{
+  color: white;
+}
+
+button{
+  height: 40px;
+  width: 120px;
+  margin-left: 60px;
+}
